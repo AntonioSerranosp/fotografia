@@ -1,7 +1,61 @@
-<p>contacto works!</p>
 
 <div class="container-fluid">
-    <div class=" col-4">
-        <img src="../../assets/retrato/DSC_0018.JPG" class="img-fluid" alt="">
-    </div>
+    <h2 class="text-center">Contacto</h2>
+    <p class="text-center">Contactame! hagamos realidad ese proyecto que tienes en mente!</p>
+        <form (ngSubmit)="guardar( contacto )" #contacto="ngForm">
+            <div class="row">
+                <div class="col-6">
+                    <input type="text" class="form-control" 
+                    type="text"
+                    name="nombre"
+                    placeholder="Nombre"
+                    [class.is-invalid]="nombre.invalid && nombre.touched"
+                    [ngModel]="usuario.nombre"
+                    required
+                    minlength="5"
+                    #nombre="ngModel">
+                    
+                </div>
+                <div class="col-6">
+                    <input type="text" class="form-control"
+                    type="text"
+                    name="apellido"
+                    placeholder="Apellido"
+                    [class.is-invalid]="apellido.invalid && apellido.touched"
+                    [ngModel]="usuario.apellido"
+                    required
+                    minlength="5"
+                    #apellido="ngModel">
+                </div>
+            </div>
+            <div class="form-row my-2">
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress">email</label>
+                        <input class="form-control"
+                        type="email"
+                        name="correo"
+                        placeholder="Correo electrónico"
+                        [class.is-invalid]="correo.invalid && correo.touched"
+                        [ngModel]="usuario.correo"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                        required
+                        #correo="ngModel">
+      
+                        <small *ngIf="correo.invalid && correo.touched"
+                        class="form-text text-danger">El correo es obligatorio</small>
+                    </div>
+                    <div class="form-group col-md-6">
+                              <label for="inputAddress">Telefono</label>
+                              <input type="number" 
+                              name="phone"
+                              ngModel
+                              class="form-control" >
+                    </div>
+            </div>
+            <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Comentarios</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Enviar</button>
+        </form>
 </div>

@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+//librerias
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 //rutas
 import { AppRoutingModule } from './app-routing.module';
 //componentes
@@ -27,7 +30,8 @@ import { FotosService } from './fotos.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [ 
     FotosService

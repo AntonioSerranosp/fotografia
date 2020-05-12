@@ -1,35 +1,78 @@
-<div class="container">
-  <!--Con routerlinkactiver podemos poder una clase css para que se sepa que esta en ese componente -->
-    <nav class="navbar justify-content-end navbar-expand-lg navbar-dark bg-dark ">
-        <a class="navbar-brand" href="#">Antonio</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<!-- <div class="container">
+  <!--Con routerlinkactiver podemos poder una clase css para que se sepa que esta en ese componente 
+    <div class="row justify-content-end">
+        <nav class="navbar justify-content-end navbar-expand-lg slide-in-blurred-right">
+            <a class="navbar-brand" href="#">Antonio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item " routerLinkActive="active">
+                  <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Precios</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Portafolio
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"  [routerLink]="[ 'retrato']">Retrato</a>
+                    <a class="dropdown-item"  [routerLink]="[ 'producto']">Comercial</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"  [routerLink]="[ 'parejas']">Parejas</a>
+                  </div>
+                </li>
+
+                <li class="nav-item" routerLinkActive="active">
+                  <a class="nav-link" [routerLink]="[ 'contacto']"tabindex="-1" >Contacto</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+       
+    </div>
+</div> -->
+
+
+<div class="row  justify-content-center ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light slide-in-blurred-right   w-100 justify-content-end ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item " routerLinkActive="active">
-              <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Precios</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Portafolio
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item"  [routerLink]="[ 'retrato']">Retrato</a>
-                <a class="dropdown-item"  [routerLink]="[ 'producto']">Comercial</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item"  [routerLink]="[ 'parejas']">Parejas</a>
-              </div>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" [routerLink]="[ 'contacto']"tabindex="-1" >Contacto</a>
-            </li>
-          </ul>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#"> Antonio</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item " routerLinkActive="active">
+                  <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+              </li>
+    
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Precios</a>
+              </li>
+    
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Portafolio
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"  [routerLink]="[ 'retrato']">Retrato</a>
+                    <a class="dropdown-item"  [routerLink]="[ 'producto']">Comercial</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item"  [routerLink]="[ 'parejas']">Parejas</a>
+                  </div>
+              </li>
+    
+              <li class="nav-item" routerLinkActive="active">
+                  <a class="nav-link" [routerLink]="[ 'contacto']"tabindex="-1" >Contacto</a>
+              </li>
+            </ul>
         </div>
       </nav>
+    
 </div>
-
