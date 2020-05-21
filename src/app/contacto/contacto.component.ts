@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { HttpClient } from '@angular/common/http';
+import { ServicePhpService } from '../services/service-php.service';
 
 
 @Component({
@@ -17,7 +19,10 @@ export class ContactoComponent implements OnInit {
     telefono: ''
   }
 
-  constructor() { }
+  constructor(
+    private http:HttpClient,
+    private serviciophp: ServicePhpService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -34,6 +39,15 @@ export class ContactoComponent implements OnInit {
         showConfirmButton: false,
         timer: 1500
       })
+
+      this.serviciophp.peticion(contacto.value)
+          .subscribe( resp =>{
+            console.log(resp);
+            
+          }, (err =>{
+            console.log(err);
+            
+          }))
     }else{
       Swal.fire({
         icon: 'error',
@@ -42,5 +56,4 @@ export class ContactoComponent implements OnInit {
       })
     }
   }
-
 }
