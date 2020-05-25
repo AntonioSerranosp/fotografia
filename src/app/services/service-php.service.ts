@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ServicePhpService {
-  private url = 'https://identitytoolkit.googleapis.com/v1/accounts:';
+  private url = 'http://localhost:8888/php-mailer/mail.php';
   private apikey = 'AIzaSyC4hPVnM9LGTMueU0IPNG-FvFwkls5LoSs';
 
   constructor(private http: HttpClient) { }
@@ -15,16 +15,23 @@ export class ServicePhpService {
       
     const data = {
       nombre: usuario.nombre,
-      correo:usuario.correo,
-      apellido:usuario. apellido,
-      telefono: usuario.telefono   
-    }
+      correo: usuario.correo,
+      apellidos: usuario.apellidos,
+      phone: usuario.phone,
+      comentarios: usuario.comentarios
+    };
     return this.http.post(
-      `${this.url}signInWithPassword?key=${this.apikey}`,
-      data
-    ).pipe(resp =>{
-      return resp
+      `${this.url}`,
+      this.getFormData(data)
+    ).pipe(resp => {
+      console.log(resp);
+      return resp;
     });
-    
-}
+  }
+
+  getFormData(object) {
+    const formData = new FormData();
+    Object.keys(object).forEach(key => formData.append(key, object[key]));
+    return formData;
+  }
 }

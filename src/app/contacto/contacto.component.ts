@@ -15,12 +15,13 @@ export class ContactoComponent implements OnInit {
   usuario = {
     nombre:'',
     correo:'',
-    apellido:'',
-    telefono: ''
-  }
+    apellidos:'',
+    phone: '',
+    comentarios: ''
+  };
 
   constructor(
-    private http:HttpClient,
+    private http: HttpClient,
     private serviciophp: ServicePhpService
   ) { }
 
@@ -29,8 +30,6 @@ export class ContactoComponent implements OnInit {
   guardar(contacto: NgForm){
    
     console.log(contacto.value);
-    console.log(contacto.valid);
-
     if (contacto.valid == true){
       Swal.fire({
         position: 'center',
@@ -38,22 +37,19 @@ export class ContactoComponent implements OnInit {
         title: 'Tu información se ha guardado correctamente',
         showConfirmButton: false,
         timer: 1500
-      })
-
+      });
       this.serviciophp.peticion(contacto.value)
-          .subscribe( resp =>{
+          .subscribe( resp => {
             console.log(resp);
-            
-          }, (err =>{
+          }, (err => {
             console.log(err);
-            
-          }))
+          }));
     }else{
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'No se ha llenado correctamente el formulario',
-      })
+      });
     }
   }
 }

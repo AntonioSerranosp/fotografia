@@ -19,10 +19,10 @@
                 <div class="col-6">
                     <input type="text" class="form-control"
                     type="text"
-                    name="apellido"
+                    name="apellidos"
                     placeholder="Apellido"
                     [class.is-invalid]="apellido.invalid && apellido.touched"
-                    [ngModel]="usuario.apellido"
+                    [ngModel]="usuario.apellidos"
                     required
                     minlength="5"
                     #apellido="ngModel">
@@ -54,7 +54,8 @@
             </div>
             <div class="form-group">
                     <label for="exampleFormControlTextarea1">Comentarios</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1"
+                        rows="3" name="comentarios" [ngModel]="usuario.comentarios"></textarea>
             </div>
             <button type="submit" class="btn btn-dark">Enviar</button>
         </form>
