@@ -14,7 +14,7 @@
         <img src="../../assets/slider/slider7.jpg" class="d-block w-100 img-fluid" alt="...">
       </div>
       <div class="carousel-item" data-interval="1500">
-        <img src="../../assets/slider/producto13.png" class="d-block w-100" alt="...">
+        <img src="../../assets/slider/slider6.png" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item" data-interval="1500">
         <img src="../../assets/slider/slider8.jpeg" class="d-block w-100" alt="...">
@@ -30,22 +30,26 @@
     </a>
   </div>
 </div>
-<section>
+<section class="seccion">
     <div class="row my-5">
         
-        <div class="col-6 col-lg-4 col-sm-12 item zoom-on-hover">
+        <div class="col-6  item zoom-on-hover">
             <img class="img-fluid image" src="../../assets/retrato/retrato2.jpg">
         </div>
         <div class="col-6 align-self-center">
-            <h2 class="text-center">Retrato</h2>
+            <h2 class="text-center">
+              <a [routerLink]="[ 'retrato']">Retrato</a> 
+            </h2>
         </div>
     </div>
     <div class="row">
             <div class="col-6 align-self-center">
-                <h2 class="text-center">Producto</h2>
+                <h2 class="text-center">
+                    <a [routerLink]="[ 'producto']">Producto</a>
+                </h2>
             </div>
             <div class="col-6 item zoom-on-hover">
-                    <img class="img-fluid  w-100" src="../../assets/producto/producto7.png">
+                    <img class="img-fluid image  w-100" src="../../assets/producto/producto7.png">
             </div>
         </div>
 </section>

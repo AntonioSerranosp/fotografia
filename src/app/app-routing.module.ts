@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'parejas', component: ParejasComponent },
   { path: 'producto', component: ComercialsComponent },
   { path: 'contacto', component: ContactoComponent },
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

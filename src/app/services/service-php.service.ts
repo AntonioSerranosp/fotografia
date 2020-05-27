@@ -7,8 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class ServicePhpService {
   private url = 'http://localhost:8888/php-mailer/mail.php';
-  private apikey = 'AIzaSyC4hPVnM9LGTMueU0IPNG-FvFwkls5LoSs';
-
+  
   constructor(private http: HttpClient) { }
 
   peticion(usuario){
